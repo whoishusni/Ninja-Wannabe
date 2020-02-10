@@ -8,6 +8,8 @@ TagManager:
   - Koin
   - Ground
   - Kunai
+  - Petir
+  - GOBatas
   layers:
   - Default
   - TransparentFX

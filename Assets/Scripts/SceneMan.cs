@@ -28,12 +28,19 @@ public class SceneMan : MonoBehaviour
 
     public void retryScene()
     {
+        DataCoin.data = 0;
         SceneManager.LoadScene("Gameplay");
     }
 
     public void mainMenu()
     {
+        DataCoin.data = 0;
         SceneManager.LoadScene("Main");
+    }
+
+    public void toLoading()
+    {
+        SceneManager.LoadScene("Loading");
     }
 
 

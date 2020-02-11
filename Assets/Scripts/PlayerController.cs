@@ -16,11 +16,15 @@ public class PlayerController : MonoBehaviour
     public Vector2 projectileOffset;
     public float coolDown = 1f;
     public String nameScene;
+    AudioSource audioSource;
+    public AudioClip audioClipCoin;
+    public AudioClip audioThrow;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         isCanShoot = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -140,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
        if(isCanShoot)
         {
+            audioSource.PlayOneShot(audioThrow);
             animator.SetTrigger("throw");
             //Membuat projectile baru
             GameObject bullet = (GameObject)Instantiate(projectile,
@@ -181,6 +186,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.transform.tag.Equals("Koin"))
         {
+            audioSource.PlayOneShot(audioClipCoin);
             DataCoin.data += 10;
             Destroy(collision.gameObject);
         }

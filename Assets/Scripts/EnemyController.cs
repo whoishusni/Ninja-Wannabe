@@ -15,11 +15,14 @@ public class EnemyController : MonoBehaviour
     bool isDie = false;
     public static int enemyKilled = 0;
     float kecepatan = 2;
+    AudioSource audioSource;
+    public AudioClip kunaiClip;
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class EnemyController : MonoBehaviour
     }
     void TakeDamage(int damage)
     {
+        audioSource.PlayOneShot(kunaiClip);
         HP -= damage;
         if(HP <=0)
         {

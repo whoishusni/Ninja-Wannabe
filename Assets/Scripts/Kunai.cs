@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Kunai : MonoBehaviour
 {
+  
     // Start is called before the first frame update
     void Start()
     {
+       
         Destroy(this.gameObject,10);
     }
 
@@ -25,7 +27,6 @@ public class Kunai : MonoBehaviour
         if (collision.gameObject.CompareTag("Monster"))
         {
             collision.gameObject.SendMessage("TakeDamage", 1);
-            
         }
         Destroy(this.gameObject);
     }

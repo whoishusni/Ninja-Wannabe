@@ -1,1 +1,1 @@
-# Ninja-Wannabe
+# Ninja-Wannabe [DEPRECATED]
